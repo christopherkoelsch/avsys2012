@@ -23,14 +23,49 @@ void testApp::setup(){
 	FFTanalyzer.peakDecayRate = 0.95f; // decay slower
 	FFTanalyzer.linearEQIntercept = 0.9f; // reduced gain at lowest frequency
 	FFTanalyzer.linearEQSlope = 0.01f; // increasing gain at higher frequencies
+
+	
+	int num = 1500;
+	p.assign(num, demoParticle());
+	currentMode = PARTICLE_MODE_NOISE;
+	
+	currentModeStr = "1 - PARTICLE_MODE_ATTRACT: attracts to mouse"; 
+	
+	//resetParticles();
+
+
 	
 	ofSetVerticalSync(true);
 }
+
+//--------------------------------------------------------------
+//void testApp::resetParticles(){
+	
+	//these are the attraction points used in the forth demo 
+//	attractPoints.clear();
+//	for(int i = 0; i < 4; i++){
+//		attractPoints.push_back( ofPoint( ofMap(i, 0, 4, 100, ofGetWidth()-100) , ofRandom(100, ofGetHeight()-100) ) );
+//	}
+//	
+//	attractPointsWithMovement = attractPoints;
+//	
+//	for(int i = 0; i < p.size(); i++){
+//		p[i].setMode(currentMode);		
+//		p[i].setAttractPoints(&attractPointsWithMovement);;
+//		p[i].reset();
+//	}	
+//}
 
 
 //--------------------------------------------------------------
 void testApp::update(){
 		ofBackground(80,80,20);
+	for(int i = 0; i < p.size(); i++){
+		p[i].setMode(currentMode);
+		p[i].update();
+	}
+	
+			
 }
 
 //--------------------------------------------------------------
@@ -38,7 +73,11 @@ void testApp::draw(){
     
     
 	float avg_power = 0.0f;	
-		
+	
+	for(int i = 0; i < p.size(); i++){
+		p[i].draw();
+	}
+	
 	/* do the FFT	*/
 	myfft.powerSpectrum(0,(int)BUFFER_SIZE/2, left,BUFFER_SIZE,&magnitude[0],&phase[0],&power[0],&avg_power);
 	 
@@ -54,18 +93,20 @@ void testApp::draw(){
 	}
 	
 	for (int i = 0; i < FFTanalyzer.nAverages; i++){
-		ofRect(200+(i*20),600,20,-FFTanalyzer.averages[i] * 6);
+		//ofRect(200+(i*20),600,20,-FFTanalyzer.averages[i] * 6);
 	}
 	
 	ofSetHexColor(0xff0000);
 	for (int i = 0; i < FFTanalyzer.nAverages; i++){
-		ofRect(200+(i*20),600-FFTanalyzer.peaks[i] * 6,20,-4);
+		//ofRect(200+(i*20),600-FFTanalyzer.peaks[i] * 6,20,-4);
 	}
 		 
 		 //float * averages; // the actual averages
 		 //float * peaks; // peaks of the averages, aka "maxAverages" in other implementations
 
 }
+	
+
 
 
 //--------------------------------------------------------------

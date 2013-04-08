@@ -11,7 +11,8 @@
 
 
 #include "ofMain.h"
-#include "ofxCvMain.h"
+#include "FFTOctaveAnalyzer.h"	
+void checkfft( -FFTanalyzer.peaks[i] & -FFTanalyzer.averages[i]);
 
 class particle {
 
@@ -22,7 +23,7 @@ class particle {
 	void update();
 	void draw();
 	
-	void checkImage( ofxCvGrayscaleImage & myImage);
+
 
 
 };

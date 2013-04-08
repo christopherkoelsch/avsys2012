@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F123BFD1703E4B400F0B5B1 /* demoParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F123BFC1703E4B400F0B5B1 /* demoParticle.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -62,6 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F123BFB1703E4B400F0B5B1 /* demoParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = demoParticle.h; path = ../../myApps/particlesExample/src/demoParticle.h; sourceTree = SOURCE_ROOT; };
+		4F123BFC1703E4B400F0B5B1 /* demoParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = demoParticle.cpp; path = ../../myApps/particlesExample/src/demoParticle.cpp; sourceTree = SOURCE_ROOT; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -191,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				FD2C1FBB16FECAA2007A9AE1 /* fft.cpp */,
+				4F123BFB1703E4B400F0B5B1 /* demoParticle.h */,
+				4F123BFC1703E4B400F0B5B1 /* demoParticle.cpp */,
 				FD2C1FBC16FECAA2007A9AE1 /* fft.h */,
 				FD2C1FBD16FECAA2007A9AE1 /* fftOctaveAnalyzer.cpp */,
 				FD2C1FBE16FECAA2007A9AE1 /* fftOctaveAnalyzer.h */,
@@ -298,6 +303,7 @@
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				FD2C1FBF16FECAA2007A9AE1 /* fft.cpp in Sources */,
 				FD2C1FC016FECAA2007A9AE1 /* fftOctaveAnalyzer.cpp in Sources */,
+				4F123BFD1703E4B400F0B5B1 /* demoParticle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

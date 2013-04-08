@@ -4,7 +4,7 @@
 #include "ofMain.h"
 #include "fft.h"
 #include "FFTOctaveAnalyzer.h"
-
+#include "demoParticle.h"
 #define BUFFER_SIZE 512
 
 class testApp : public ofBaseApp {
@@ -20,10 +20,16 @@ class testApp : public ofBaseApp {
 		void mouseDragged(int x, int y, int button);
 		void mousePressed(int x, int y, int button);
 		void mouseReleased();
-		
+		//void resetParticles();
 		void audioReceived 	(float * input, int bufferSize, int nChannels); 
 	
 		FFTOctaveAnalyzer FFTanalyzer;
+	particleMode currentMode;
+	string currentModeStr; 
+	
+	vector <demoParticle> p;
+	vector <ofPoint> attractPoints;
+	vector <ofPoint> attractPointsWithMovement;
 	
 
 	private:	

@@ -24,8 +24,8 @@ void testApp::update(){
 	myPictureAsCvImage.setFromPixels(myPicture.getPixels(),myPicture.width, myPicture.height);
 	
 	
-	//myPictureAsCvImage.blur( mouseX * 2 + 1);
-	myPictureAsCvImage.threshold(mouseX);
+	myPictureAsCvImage.blur( mouseX * 2 + 1);
+	//myPictureAsCvImage.threshold(mouseX);
 }
 
 //--------------------------------------------------------------

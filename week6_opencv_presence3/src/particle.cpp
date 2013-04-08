@@ -8,6 +8,8 @@
  */
 
 #include "particle.h"
+#include "fft.h"
+#include "fftOctaveAnalyzer.h"
 
 
 void particle::setup(){
@@ -20,7 +22,7 @@ void particle::update(){
 	energy = 0.99f * energy + 0.01f * 1.0f;
 }
 
-void particle::checkImage( ofxCvGrayscaleImage & myImage){
+void particle::checkfft( -FFTanalyzer.peaks & -FFTanalyzer.averages){
 	
 	float pctx = pos.x / (float)ofGetWidth();
 	pctx = ofClamp(pctx, 0,1);
@@ -30,7 +32,7 @@ void particle::checkImage( ofxCvGrayscaleImage & myImage){
 	int pixXinImage = myImage.width * pctx;
 	int pixYinImage = myImage.height * pcty;
 	
-	unsigned char * pixels = myImage.getPixels();
+	
 	if (pixels[pixYinImage * myImage.width + pixXinImage] > 127){
 		energy = 0;
 	}
